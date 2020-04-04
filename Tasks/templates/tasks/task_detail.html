@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block content %}
+
+<div class="container">
+	<div class="row">
+		<div class="col-md-12">
+			<div class="card">
+			  <h5 class="card-header">Задача №{{ post.pk }}</h5>
+			  <div class="card-body">
+			    <h5 class="card-title">{{ post.title }}</h5>
+			    <p class="card-text">{{ post.body }}</p>
+			    <a href="{% url 'task_edit_url' pk=post.pk %}" class="btn btn-outline-dark">Изменить</a>
+			    <a href="{% url 'task_remove_url' pk=post.pk %}" class="btn btn-outline-dark">Удалить</a>
+			  </div>
+			</div>
+		</div>
+    </div>
+</div>
+
+{% endblock %}			

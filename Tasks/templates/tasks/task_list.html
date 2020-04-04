@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+	<div class="section section1">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-10 col-lg-offset-4">
+                	
+                    <h1 class="text-center">
+                    	Наши задачи!
+                    </h1> 
+                    <a href="{% url 'task_new_url' %}" class="btn btn-secondary btn-lg btn-block active" role="button" aria-pressed="true">Новая задача</a> 
+                </div>
+                {% for post in posts %}
+
+				<div class="card task-card" style="width: 18rem;">
+				  <div class="card-body">
+				    <a href="{% url 'task_detail' pk=post.pk %}"><h5 class="card-header text-center">Задача №{{post.pk}}</h5></a>
+				    <h5 class="card-title mb-2 text-center">{{ post.title }}</h5>
+				    <p class="card-text">{{ post.body }}</p>
+				    <a href="{% url 'task_edit_url' pk=post.pk %}" class="btn btn-outline-dark card-link">
+				    	Изменить</a>
+				    <a href="{% url 'task_remove_url' pk=post.pk %}" class="btn btn-outline-dark card-link">Удалить</a>
+				  </div>
+				</div>
+
+				{% endfor %}
+            </div>
+        </div>
+    </div>
+
+{% endblock %}
+
+
+
+
+
+
+

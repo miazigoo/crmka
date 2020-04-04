@@ -1,0 +1,51 @@
+
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block content %}
+<div class="container">
+	<div class="row">
+		<div class="col-md-12">
+
+			<div class="card">
+			  <h5 class="card-header">Заказ</h5>
+			  <div class="card-body">
+			    <table class="table table-bordered">
+				  <thead>
+				    <tr>
+				      <th scope="col">Номер заказа: {{ post.id }}</th>
+				      <th scope="col">Магазин: {{ post.shop }}</th>
+				      <th scope="col">Клиент: {{ post.pk }}</th>
+				      <th scope="col">Тип модели: {{ post.model_Type }}</th>
+				    </tr>
+				  </thead>
+				  <tbody>
+				    <tr>
+				      <th scope="row">Цена: {{ post.Cost }}</th>
+				      <th scope="row">Статус: {{ post.status }}</td>
+				      <th scope="row">Номер клиента: {{ post.pk }}</td>
+				      <th scope="row">Фирма: {{ post.firma }}</td>
+				    </tr>
+				    <tr>
+				      <th scope="row">Предоплата: {{ post.predoplata }}</th>
+				      <th scope="row">Мастер: {{ post.author }}</td>
+				      <th scope="row">TУзнали о нас: {{ post.pk }}</td>
+				      <th scope="row">Устройство: {{ post.model_devie }}</td>
+				    </tr>
+				    <tr>
+				      <th scope="row">Дата: {{ post.created_date }}</th>
+				      <th scope="row">Комплект: {{ post.komplekt }}</td>
+				      <th scope="row">Заметки приемщика: {{ post.zametki_priemshika }}</td>
+				      <th scope="row">Информация о поломке: {{ post.Error_type }}</td>
+				    </tr>
+				  </tbody>
+				</table>
+			    <a href="{% url 'post_edit_url' pk=post.pk %}" class="btn btn-outline-dark">Изменить</a>
+			  </div>
+			</div>
+
+		</div>
+    </div>
+</div>
+{% endblock %}

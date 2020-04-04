@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+<div class="general-container">
+        <div class="container top-container">
+            <div class="row">
+                <div class="col-lg-12 col-lg-offset-2">
+                    
+                    
+                       
+            <form method="POST" class="post-form">
+                <h1 class="title">Новая задача!</h1> 
+                {% csrf_token %}
+                {{ form.as_p }}
+                <button type="submit" class="btn btn-success save">Отправить</button>
+            </form>
+
+                   
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

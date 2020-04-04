@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block content %}
+
+<div class="container">
+	<div class="row">
+		<div class="col-md-8">
+			<div class="card">
+			  <h5 class="card-header">Клиент</h5>
+			  <div class="card-body">
+			    <h5 class="card-title">{{ post.customer_name }}</h5>
+			    <hr>
+			    <h5 class="card-title">{{ post.customer_surname }}</h5>
+			    <hr>
+			    <h5 class="card-title">{{ post.customer_patronymic }}</h5>
+			    <hr>
+			    <h5 class="card-title">{{ post.customer_phone }}</h5>
+			    <hr>
+			    <p class="card-text">{{ post.uznali_o_nas }}</p>
+			    <a href="{% url 'customer_edit_url' pk=post.pk %}" class="btn btn-outline-dark">Изменить</a>
+			    <a href="{% url 'customer_new_url' %}" class="btn btn-outline-dark">Новый клиет</a>
+			  </div>
+			</div>
+		</div>
+    </div>
+</div>
+
+{% endblock %}

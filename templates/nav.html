@@ -1,0 +1,38 @@
+{% load static %}
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+    <a class="navbar-brand" href="{% url 'order_url' %}">
+      <img src="{% static 'images/icon/zakazi.png' %}" class="img" align="center"> Заказы
+    </a>
+    <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+      <li class="nav-item active">
+        <a class="nav-link" href="{% url 'task_list_url' %}">
+          <img src="{% static 'images/icon/zadachi.png' %}" class="img" align="center"> Задачи
+          <span class="sr-only">(current)</span>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">
+          <img src="{% static 'images/icon/magazin.png' %}" class="img" align="center"> Магазин
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link " href="{% url 'customer_list_url' %}">
+          <img src="{% static 'images/icon/klient.png' %}" class="img" align="center"> Клиент
+        </a>
+      </li>
+      <li class="nav-item active">
+        <a class="nav-link " href="{% url 'post_new_url' %}">
+          <img src="{% static 'images/icon/plus2.png' %}" class="img" align="center"> Новый заказ
+        </a>
+      </li>
+    </ul>
+    <form class="form-inline my-2 my-lg-0">
+      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+    </form>
+  </div>
+</nav>

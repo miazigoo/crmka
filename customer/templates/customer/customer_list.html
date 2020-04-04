@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+	<div class="section section1">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-10 col-lg-offset-4">
+                	
+                    <h1 class="text-center">
+                    	Наши клиенты!
+                    </h1> 
+                    <a href="{% url 'customer_new_url' %}" class="text-center btn btn-secondary btn-lg btn-block active" role="button" aria-pressed="true">Новый клиент</a> 
+                </div>
+                {% for post in posts %}
+
+				<div class="card task-card" style="width: 18rem;">
+				  <div class="card-body">
+				    <a href="{% url 'customer_detail' pk=post.pk %}"><h5 class="card-header text-center">Клиент №{{post.pk}}</h5></a>
+				    <h5 class="card-title mb-2 text-center">{{ post.customer_name }}</h5>
+                    <hr>
+                    <h5 class="card-title">{{ post.customer_surname }}</h5>
+                    <hr>
+                    <h5 class="card-title">{{ post.customer_patronymic }}</h5>
+                    <hr>
+                    <h5 class="card-title">{{ post.customer_phone }}</h5>
+                    <hr>
+				    <p class="card-text">{{ post.uznali_o_nas }}</p>
+				    <a href="{% url 'customer_edit_url' pk=post.pk %}" class="btn btn-outline-dark card-link">
+				    	Изменить</a>
+				  </div>
+				</div>
+
+				{% endfor %}
+            </div>
+        </div>
+    </div>
+
+{% endblock %}
